@@ -28,14 +28,14 @@ void loop(){
 	char *usr_name = getenv("USER");
 	char **tokens;
 	char *line;
-
+  printf("(%s)>",usr_name);
 	do{
-		printf("(%s)>",usr_name);
 		line = readline();
 		tokens = parser(line);
     status = executer(tokens);
 		free(tokens);
 		free(line);
+    printf("(%s)>",usr_name);
 	}while(status);
 }
 
@@ -69,6 +69,7 @@ char *readline(){
   buffer[index] = '\0';
   return buffer;
 }
+
 char **parser(char *line){
 
   char **tokens;
@@ -103,7 +104,7 @@ int executer(char **tokens){
   if(id == -1){
     perror("abvsh");
   }
-  else{
+  else if (id == 0){ // this is for child process 
     int exe = execvp(tokens[0],tokens);
     if(exe == -1){
       perror("abvsh");
