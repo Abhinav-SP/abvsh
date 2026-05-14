@@ -3,5 +3,7 @@
 A minimal Unix shell implemented in C that utilizes the fork-exec-wait pattern to execute system commands. 
 
 ---
-https://github.com/user-attachments/assets/386d0ea4-bcbd-410b-96cc-644d96672396
+![demo](https://github.com/user-attachments/assets/e85e6068-0a6c-43a6-9f75-3963a0115643)
+
+
 
